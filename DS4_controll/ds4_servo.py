@@ -17,6 +17,7 @@ while True:
         joystick = pygame.joystick.Joystick(0)
         break
 
+print(joystick.get_name())
 joystick.init()
 
 while True:
