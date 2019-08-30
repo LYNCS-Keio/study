@@ -8,7 +8,7 @@ joystick.init()
 
 
 while True:
-    updpwn = joystick.get_axis(0)
+    updown = joystick.get_axis(0)
     if updown == 0 :
         pi.set_servo_pulsewidth(4, 1500)
     elif updown > 0 :
