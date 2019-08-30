@@ -19,6 +19,7 @@ while True:
 
 print(joystick.get_name())
 joystick.init()
+print(joystick.get_numaxes())
 
 while True:
     time.sleep(0.01)
