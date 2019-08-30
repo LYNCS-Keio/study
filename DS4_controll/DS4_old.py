@@ -17,30 +17,10 @@ pygame.display.set_caption('hello world')
 
 # -------- Main Program Loop -----------
 while done==False:
-    # EVENT PROCESSING STEP
-    for event in pygame.event.get(): # User did something
-        if event.type == pygame.QUIT: # If user clicked close
-            done=True # Flag that we are done so we exit this loop
-
-        # Possible joystick actions: JOYAXISMOTION JOYBALLMOTION JOYBUTTONDOWN JOYBUTTONUP JOYHATMOTION
-        if event.type == pygame.JOYBUTTONDOWN:
-            print("Joystick button pressed.")
-        if event.type == pygame.JOYBUTTONUP:
-            print("Joystick button released.")
-
-
-    # DRAWING STEP
-    # First, clear the screen to white. Don't put other drawing commands
-    # above this, or they will be erased with this command.
-
-    textPrint.reset()
-    # Get count of joysticks
-    joystick_count = pygame.joystick.get_count()
-
-    textPrint.indent()
 
     # For each joystick:
     for i in range(joystick_count):
+        print(i)
         joystick = pygame.joystick.Joystick(i)
         joystick.init()
 
@@ -62,7 +42,7 @@ while done==False:
 
 
 
-    print (axis2,axis2,axis5,button)
+    print (axis1,axis2,axis5,button)
 
 # Close the window and quit.
 # If you forget this line, the program will 'hang'
