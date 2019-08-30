@@ -30,16 +30,12 @@ try:
         # Handle each event individually
         for event in events:
             print("event:{}".format(event.type))
-            if event.type == pygame.QUIT:
-                # User exit
-                pass
-            elif event.type == pygame.JOYAXISMOTION:
+            if event.type == pygame.JOYAXISMOTION:
                 # A joystick has been moved
                 hadEvent = True
             if hadEvent:
                 leftRight = joystick.get_axis(0)
-
-            print(leftRight)
+                print(leftRight)
 
 
 finally:
