@@ -20,23 +20,12 @@ while True:
 
 print(joystick.get_name())
 joystick.init()
-print(joystick.get_numaxes())
+print(joystick.get_numbuttons())
 
 try:
     while True:
-        # Get the latest events from the system
-        hadEvent = False
-        events = pygame.event.get()
-        # Handle each event individually
-        for event in events:
-            print("event:{}".format(event.type))
-            if event.type == pygame.JOYAXISMOTION:
-                # A joystick has been moved
-                hadEvent = True
-            if hadEvent:
-                leftRight = joystick.get_axis(0)
-                print(leftRight)
-
-
+         print(joystick.get_button(0), joystick.get_button(1),
+          joystick.get_button(2), joystick.get_button(3), joystick.get_button(4), joystick.get_button(5))
+        
 finally:
     sys.exit()
