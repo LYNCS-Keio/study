@@ -10,41 +10,41 @@ done = False
 
 # Initialize the joysticks
 pygame.joystick.init()
-gamen = pygame.display.set_mode((400, 300))
-pygame.display.set_caption('hello world')
-
-
-
-# -------- Main Program Loop -----------
-while done==False:
-
-    # For each joystick:
-    for i in range(joystick_count):
-        print(i)
-        joystick = pygame.joystick.Joystick(i)
-        joystick.init()
 
 
 
 
+try:
+    # -------- Main Program Loop -----------
+    while done==False:
 
-# axis1:center axis2:左右(y軸回転) axis5:上下(x軸回転)
-        axis1 = int(1000*joystick.get_axis( 1 ))
-        axis2 = int(1000*joystick.get_axis( 2 ))
-        axis5 = int(1000*joystick.get_axis( 5 ))
-
-
-
-        buttonm = joystick.get_button( 2 )
-        buttonb = joystick.get_button( 1 )
-        button = buttonb + 2*buttonm
+        # For each joystick:
+        for i in range(joystick_count):
+            print(i)
+            joystick = pygame.joystick.Joystick(i)
+            joystick.init()
 
 
 
 
-    print (axis1,axis2,axis5,button)
 
-# Close the window and quit.
-# If you forget this line, the program will 'hang'
-# on exit if running from IDLE.
-pygame.quit ()
+    # axis1:center axis2:左右(y軸回転) axis5:上下(x軸回転)
+            axis1 = int(1000*joystick.get_axis( 1 ))
+            axis2 = int(1000*joystick.get_axis( 2 ))
+            axis5 = int(1000*joystick.get_axis( 5 ))
+
+
+
+            buttonm = joystick.get_button( 2 )
+            buttonb = joystick.get_button( 1 )
+            button = buttonb + 2*buttonm
+
+
+
+
+        print (axis1,axis2,axis5,button)
+finally:
+    # Close the window and quit.
+    # If you forget this line, the program will 'hang'
+    # on exit if running from IDLE.
+    pygame.quit ()
