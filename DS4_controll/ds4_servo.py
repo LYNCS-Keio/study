@@ -24,7 +24,8 @@ print(joystick.get_numbuttons())
 
 try:
     while True:
-         print(joystick.get_button(0), joystick.get_button(1),
+        time.sleep(1)
+        print(joystick.get_button(0), joystick.get_button(1),
           joystick.get_button(2), joystick.get_button(3), joystick.get_button(4), joystick.get_button(5))
         
 finally:
