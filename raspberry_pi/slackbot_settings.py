@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-API_TOKEN = '<APIトークン>'
+API_TOKEN = input()
 
 #デフォルトの返答
 default_reply = 'ahahahaha...'
