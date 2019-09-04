@@ -15,4 +15,4 @@ def TestOfReply(message, *something):
     message.reply('ajajaja')
     #命令したユーザー名を取得
     #userID = message.channel._client.users[message.body['user']][u'name']
-    #print userID + 'へのreply'
+    #print(userID + 'へのreply')
