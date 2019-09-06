@@ -15,6 +15,7 @@ build
 
 #For Visual Studio Code
 *.json
+.vscode
 
 # Prerequisites
 *.d
