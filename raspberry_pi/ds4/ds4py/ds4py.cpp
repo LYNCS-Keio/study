@@ -100,6 +100,22 @@ int DS4_util::DS4_GetAxis ( u_int8_t num )
 
 }
 
+u_int8_t DS4_util::DS4_GetNumAxes()
+{
+    if (status != true) { throw std::runtime_error("Error: Joystick not initialized"); }
+    
+    return axes;
+
+}
+
+u_int8_t DS4_util::DS4_GetNumButtons()
+{
+    if (status != true) { throw std::runtime_error("Error: Joystick not initialized"); }
+
+    return buttons;
+    
+}
+
 /**
 int main ()
 {
