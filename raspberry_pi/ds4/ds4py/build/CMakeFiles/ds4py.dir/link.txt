@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -Wall -O3 -pthread  -shared -Wl,-soname,ds4py.cpython-37m-x86_64-linux-gnu.so -o ds4py.cpython-37m-x86_64-linux-gnu.so CMakeFiles/ds4py.dir/ds4py.cpp.o CMakeFiles/ds4py.dir/ds4py_wrap.cpp.o -flto 
