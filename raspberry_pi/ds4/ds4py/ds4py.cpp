@@ -28,10 +28,10 @@ int DS4_util::DS4_init ( const char *dir )
         throw std::runtime_error("Error: Failed opening device file");
     }
 
-    if ((ioctl(fd, JSIOCGVERSION, &version) < -1) ||
-    (ioctl(fd, JSIOCGAXES, &axes) < -1) ||
-    (ioctl(fd, JSIOCGBUTTONS, &buttons) < -1) ||
-    (ioctl(fd, JSIOCGNAME(128), name) < -1)){
+    if ((ioctl(fd, JSIOCGVERSION, &version) < 0) ||
+    (ioctl(fd, JSIOCGAXES, &axes) < 0) ||
+    (ioctl(fd, JSIOCGBUTTONS, &buttons) < 0) ||
+    (ioctl(fd, JSIOCGNAME(128), name) < 0)){
         status = false;
         throw std::runtime_error("Error: Failed controlling device");
     }
