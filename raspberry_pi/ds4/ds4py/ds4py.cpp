@@ -1,4 +1,3 @@
-#include <iostream>
 #include <thread>
 #include <fcntl.h>
 #include <unistd.h>
@@ -19,6 +18,7 @@ DS4_util::~DS4_util ()
     update.join();
     close(fd);
     status = false;
+
 } 
 
 int DS4_util::DS4_init ( const char *dir )

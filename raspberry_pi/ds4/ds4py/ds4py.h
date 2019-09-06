@@ -39,6 +39,7 @@ class DS4_util
         bool running = false;
 
         std::thread update;
+
         void DS4_update();
 
 };
