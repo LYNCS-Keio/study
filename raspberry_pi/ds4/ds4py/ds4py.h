@@ -14,8 +14,8 @@ class DS4_util
         int DS4_init( const char *dir );
         int DS4_GetDriverVersion();
         char* DS4_GetDeviceName();
-        int DS4_GetAxis( u_int8_t );
-        int DS4_GetButton( u_int8_t );
+        int DS4_GetAxis( u_int8_t num );
+        int DS4_GetButton( u_int8_t num );
         u_int8_t DS4_GetNumAxes();
         u_int8_t DS4_GetNumButtons();
         u_int8_t* DS4_GetAxesMap();
@@ -43,7 +43,5 @@ class DS4_util
         std::thread update_thread;
 
         void update_value();
-        int getaxmap();
-        int getbtmap();
 
 };
