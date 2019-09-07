@@ -18,6 +18,8 @@ class DS4_util
         int DS4_GetButton( u_int8_t );
         u_int8_t DS4_GetNumAxes();
         u_int8_t DS4_GetNumButtons();
+        u_int8_t* DS4_GetAxesMap();
+        u_int16_t* DS4_GetButtonsMap();
 
     private:
         int fd;
@@ -38,8 +40,10 @@ class DS4_util
         bool status = false;
         bool running = false;
 
-        std::thread update;
+        std::thread update_thread;
 
-        void DS4_update();
+        void update_value();
+        int getaxmap();
+        int getbtmap();
 
 };

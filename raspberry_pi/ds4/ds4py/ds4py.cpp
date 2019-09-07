@@ -15,7 +15,7 @@ DS4_util::DS4_util () {}
 DS4_util::~DS4_util () 
 {
     running = false;
-    update.join();
+    update_thread.join();
     close(fd);
     status = false;
 
@@ -42,14 +42,14 @@ int DS4_util::DS4_init ( const char *dir )
     status = true;
     running = true;
 
-    std::thread update(&DS4_util::DS4_update, this);
-    update.detach();
+    std::thread update_thread(&DS4_util::update_value, this);
+    update_thread.detach();
 
     return 0;
     
 }
 
-void DS4_util::DS4_update ()
+void DS4_util::update_value ()
 {
     if (status != true) { throw std::runtime_error("Error: Joystick not initialized"); }
 
@@ -115,6 +115,7 @@ u_int8_t DS4_util::DS4_GetNumButtons()
     return buttons;
     
 }
+
 
 /**
 int main ()
